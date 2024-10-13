@@ -1,7 +1,7 @@
 services:
   - type: web
     name: nvps
-    env: ruby
+    runtime: ruby
     buildCommand: bundle install
     startCommand: |
       bundle exec rake db:create db:migrate db:seed
