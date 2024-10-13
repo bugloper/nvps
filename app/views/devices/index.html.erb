@@ -1,0 +1,19 @@
+<header>
+  <h1>Devices</h1>
+</header>
+
+<div class="container">
+  <%= link_to "Add New Device", new_device_path, class: "btn btn-primary" %>
+
+  <div class="list">
+    <% @devices.each do |device| %>
+      <div class="list-item">
+        <strong><%= device.name %></strong>
+        <p>Identifier: <%= device.identifier %></p>
+        <%= link_to "View", device_path(device) %> |
+        <%= link_to "Edit", edit_device_path(device) %> |
+        <%= link_to "Delete", device_path(device), method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
+    <% end %>
+  </div>
+</div>
