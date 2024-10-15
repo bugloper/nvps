@@ -1,0 +1,19 @@
+<header>
+  <h1>Phones</h1>
+</header>
+
+<div class="container">
+  <%= link_to "Add New Phone", new_phone_path, class: "btn btn-primary" %>
+
+  <div class="list">
+    <% @phones.each do |phone| %>
+      <div class="list-item">
+        <strong>Number: <%= phone.number %></strong>
+        <p>Device: <%= phone.device.name if phone.device %></p>
+        <%= link_to "View", phone_path(phone) %> |
+        <%= link_to "Edit", edit_phone_path(phone) %> |
+        <%= link_to "Delete", phone_path(phone), method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
+    <% end %>
+  </div>
+</div>

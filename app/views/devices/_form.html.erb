@@ -1,0 +1,26 @@
+<%= form_with(model: device) do |form| %>
+  <% if device.errors.any? %>
+    <div class="error">
+      <h2><%= pluralize(device.errors.count, "error") %> prohibited this device from being saved:</h2>
+      <ul>
+        <% device.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :identifier %>
+    <%= form.text_field :identifier %>
+  </div>
+
+  <div>
+    <%= form.submit "Save Device" %>
+  </div>
+<% end %>
