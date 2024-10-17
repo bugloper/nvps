@@ -10,7 +10,7 @@ class DevicesController < ApplicationController
   def show
   end
 
-  def fetc_numbers
+  def fetch_numbers
     render(
       json: {
         phones: Device.find_by(
